@@ -1,0 +1,3 @@
+django-admin startproject clarityx
+cd clarityx
+python manage.py startapp website
