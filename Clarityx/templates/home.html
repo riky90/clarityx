@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+  <form method="POST" enctype="multipart/form-data" action="selectLob">
+  {% csrf_token %}
+
+
+
+      <canvas id="myChart" style="width: 4000px; height: 3000px;margin-right: 10px"></canvas>
+
+  </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'bar',
+
+            // The data for our dataset
+            data: {
+                datasets: [{
+                    label: 'Planned Production',
+                    data: {{dataset|safe}},
+                    barThickness:'flex',
+                    backgroundColor:'#ffe6b3',
+                    borderColor:'#ffcc66',
+                    order:1
+                },
+                {
+                    label: 'Production Capacity',
+                    data: [2350,2350,2350,2350,2350,2350,2350,2350,2350,2350,2350,2350,2350,2350,2350,2350,2350,2350,2350,2350,],
+                    backgroundColor:'Transparent',
+                    borderColor:'#000d13',
+                    // Changes this dataset to become a line
+                    type: 'line',
+                    order:2
+                }],
+                labels: {{label|safe}}
+            },
+
+            // Configuration options go here
+            options: {
+            title:{
+               display: true,
+               text: 'HCE Total Orderbook',
+               fontColor:'#000d13',
+               fontSize:18},
+            "scales":{"yAxes":[{"ticks":{"beginAtZero":true}}]}}
+        }); </script>
+
+
+{% endblock content %}

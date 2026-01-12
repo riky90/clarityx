@@ -1,0 +1,32 @@
+/* Rimuove lo spazio bianco in alto */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Stile per i link del menu */
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+    color: #515962 !important;
+    font-weight: 500;
+    margin-right: 15px;
+}
+
+.nav-link:hover {
+    color: #ff6600 !important;
+}
+
+/* IL TUO BOTTONE ARANCIONE */
+.btn-orange {
+    background-color: #ff6600 !important; /* Colore esatto della tua foto */
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 10px 25px !important;
+    text-transform: none;
+    transition: 0.3s;
+}
+
+.btn-orange:hover {
+    background-color: #e65c00 !important;
+    box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
+}
